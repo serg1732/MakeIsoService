@@ -15,6 +15,7 @@ func main() {
 	cLogger := loggers.NewConsoleLogger()
 
 	router.GET("/makeiso", handlers.CreateIso(cLogger))
+	router.GET("/extract", handlers.ExtractIso(cLogger))
 
 	service := skeletservice.NewService(router, cLogger)
 	service.Start()
